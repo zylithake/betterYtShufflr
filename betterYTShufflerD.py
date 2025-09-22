@@ -75,14 +75,6 @@ def addPlaylist2():
 
 
 
-    
-    
-
-
-
-
-
-
 
 def addPlaylist3(playlist):
     enterCrScreenP.pack_forget()
@@ -212,7 +204,7 @@ def addVideoGrQ(url,title,creator):
     
 
 
-#loads play from category entry
+#loads vid to play from category entry
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def playCat():
     catSearchScreen.pack(side='top')
@@ -221,7 +213,6 @@ def playCat():
     c.execute("SELECT game FROM videos")
     cats = c.fetchall()
     cats = list(set(cats))
-    #cats[0][0]
     catLab = tk.Label(catSearchScreen12,text = 'Categories:')
     catLab.pack(side='top')
     creLab = tk.Label(creSearchScreen12,text = 'Creators:')
@@ -233,13 +224,13 @@ def playCat():
     c.execute("SELECT creator FROM videos")
     cres = c.fetchall()
     cres = list(set(cres))
-    #cats[0][0]
+
     
     for cre in cres:
         creLab1 = tk.Label(creSearchScreen12,text=cre[0])
         creLab1.pack()
     
-
+    
 
     s.pack(side='bottom')
     l.pack()
@@ -339,6 +330,8 @@ dest2 = False
 
 
 window = tk.Tk()
+window.title('Youtube Shuffler')
+window.title("Youtube Shuffler")
 window.geometry('300x300')
 window.config(cursor="star")
 window['bg']="#9370DB"
